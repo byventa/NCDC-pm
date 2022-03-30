@@ -1,0 +1,14 @@
+<div class="content">
+  <div>
+    <app-go-back-button></app-go-back-button>
+    <ng-container *ngIf="id === -1; else exists">
+      Table item does not exists
+    </ng-container>
+    <ng-template #exists>
+      <ul>
+        <li *ngFor="let element of data | keyvalue">{{ element.value }}</li>
+      </ul>
+    </ng-template>
+  </div>
+  <app-history></app-history>
+</div>

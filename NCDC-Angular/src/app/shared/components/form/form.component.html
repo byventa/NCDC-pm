@@ -1,0 +1,19 @@
+<div class="content">
+  <div>
+    <app-go-back-button></app-go-back-button>
+    <form [formGroup]="form" (ngSubmit)="submitForm()">
+      <input type="text" formControlName="id" pInputText />
+      <br />
+      <input type="text" formControlName="title" pInputText />
+      <br />
+      <select name="authors" formControlName="author">
+        <option *ngFor="let option of authorOptions" value="{{ option }}">
+          {{ option }}
+        </option>
+      </select>
+      <br />
+      <button pButton type="submit">Submit</button>
+    </form>
+  </div>
+  <app-history></app-history>
+</div>
